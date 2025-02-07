@@ -1,0 +1,22 @@
+<div class="table-container">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Position</th>
+            <th>City</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Haris Khan</td>
+                <td>Frontend Developer (Trainee)</td>
+                <td>Islamabad</td>
+                <td>
+                    <button class="edit-user" [routerLink]="['/edituser']">Edit User</button>
+                    <button class="delete-user">Delete User</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="add-user" [routerLink]="['/adduser']" id="addUserBtn">Add New User</button>
+</div>
