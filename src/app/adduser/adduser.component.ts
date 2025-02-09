@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-adduser',
@@ -7,6 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./adduser.component.css']
 })
 export class AdduserComponent {
-  constructor(private router: Router) {}
+  user: User = { id: 0, name: '', position: '', city: '' };
 
+  constructor(private userService: UserService, private router: Router) {}
+
+  saveUser() {
+    this.userService.addUser(this.user);
+    this.router.navigate(['/']);
+  }
 }

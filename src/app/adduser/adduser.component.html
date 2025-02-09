@@ -1,14 +1,14 @@
 <div class="form-container">
     <h2>Add New User</h2>
-    <form action="">
-        <label for="Name">Name</label>
-        <input type="text" name="name" id="">
+    <form (ngSubmit)="saveUser()">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="user.name" name="name" id="name" required>
 
-        <label for="Position">Position</label>
-        <input type="text" name="position" id="">
+        <label for="position">Position</label>
+        <input type="text" [(ngModel)]="user.position" name="position" id="position" required>
 
-        <label for="City">City</label>
-        <input type="text" name="city" id="">
+        <label for="city">City</label>
+        <input type="text" [(ngModel)]="user.city" name="city" id="city" required>
 
         <button type="submit">Submit</button>
     </form>

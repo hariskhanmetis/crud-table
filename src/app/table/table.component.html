@@ -1,19 +1,21 @@
 <div class="table-container">
     <table>
         <thead>
-            <th>Name</th>
-            <th>Position</th>
-            <th>City</th>
-            <th>Actions</th>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Haris Khan</td>
-                <td>Frontend Developer (Trainee)</td>
-                <td>Islamabad</td>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.position }}</td>
+                <td>{{ user.city }}</td>
                 <td>
-                    <button class="edit-user" [routerLink]="['/edituser']">Edit User</button>
-                    <button class="delete-user">Delete User</button>
+                    <button class="edit-user" [routerLink]="['/edituser', user.id]">Edit User</button>
+                    <button class="delete-user" (click)="deleteUser(user.id)">Delete</button>
                 </td>
             </tr>
         </tbody>
