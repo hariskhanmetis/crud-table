@@ -22,15 +22,12 @@ export class EdituserComponent {
     const existingUser = this.userService.getUserById(id);
 
     if (existingUser) {
-      this.user = { ...existingUser }; // ✅ Copies user data into the form fields
-    } else {
-      alert("User not found!"); // ❌ Error handling if user ID is incorrect
-      this.router.navigate(['/']); // Redirect back to table if user not found
-    }
+      this.user = { ...existingUser }; 
+    } 
   }
 
   updateUser() {
     this.userService.updateUser(this.user);
-    this.router.navigate(['/']); // Navigate back to the table after updating
+    this.router.navigate(['/']); 
   }
 }
