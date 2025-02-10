@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent {
+export class TableComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.users = this.userService.getUsers();
@@ -27,6 +27,6 @@ export class TableComponent {
 
   deleteUser(id: number) {
     this.userService.deleteUser(id);
-    this.users = this.userService.getUsers(); 
+    this.users = this.userService.getUsers();
   }
 }

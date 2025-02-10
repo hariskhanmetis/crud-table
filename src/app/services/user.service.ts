@@ -6,11 +6,13 @@ import { User } from '../models/user.model';
 })
 
 export class UserService {
-  private users: User[] = [
-    { id: 1, name: "Haris Khan", position: "Frontend Developer (Trainee)", city: "Islamabad" }
-  ];
+  private users: User[];
 
-  constructor() { }
+  constructor() { 
+    this.users = [ 
+      { id: 1, name: "Haris Khan", position: "Frontend Developer (Trainee)", city: "Islamabad" }
+    ];
+   }
 
   getUsers(): User[] {
     return this.users;
